@@ -2,3 +2,4 @@ mlpclf_model.pickle filter=lfs diff=lfs merge=lfs -text
 train_dataset.pickle filter=lfs diff=lfs merge=lfs -text
 train_dataset_transformed.pickle filter=lfs diff=lfs merge=lfs -text
 X_train.pickle filter=lfs diff=lfs merge=lfs -text
+X_train_tr.pickle filter=lfs diff=lfs merge=lfs -text
