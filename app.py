@@ -121,8 +121,7 @@ def predictStatement():
                 temp_dict = {'statement':df['statements'].values,
                             'sentiment prediction': predicted_label
                             }
-                result = pd.DataFrame(temp_dict,)
-                result = result[['statement','sentiment prediction']]
+                result = pd.DataFrame(temp_dict)
                 result['sentiment prediction'] = result['sentiment prediction'].apply(lambda x: 'Negative' if x==0 else 'Positive')
                 result.to_csv(r'static\downloads\result_file.csv')
             return redirect(url_for('result_file'))
