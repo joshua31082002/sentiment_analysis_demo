@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sentiment Analysis</title>
+        <link rel="icon" type="image/x-icon" href="..\static\favicon.ico">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    
+        <div class="title-div">
+            <h1 class="main-title"><span class="s1">S</span>enti<span class="s2">G</span>rader : Sentiment Analysis Tool</h1>
+        </div>
+        
+        <div class="result-table">
+            <h2 class="heading">Sentiment Polarity Result</h2>
+            <table>
+                <thead>
+                    <th>Statement</th>
+                    <th>Polarity Prediction</th>
+                </thead>
+                <tbody>
+                    <td>{{statement}}</td>
+                    <td>{{prediction}}</td>
+                </tbody>
+            </table>
+        </div>
+        <div class="back-div">
+            <form class="back" action="/result_single" method="POST">
+                <button class="back-button" value="backward"><span>Go back to home page</span></button>
+            </form>
+        </div>
+    </body>
+
+    <style>
+        html,body{
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(49, 49, 49, 0.903) 100%);
+            height:100%;
+            margin:0%;
+            text-align: center;
+        }
+
+        .main-title{
+            height: 20%;
+            text-align: center;
+            color: #fbfbfb;
+            font-size: 50px;
+            font-family: arial;
+        }
+
+        table, th, td{
+            border: 2px solid gray;
+            color: white;
+            width:60%;
+            height:25%;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            font-size: 15px;
+            top:15%;
+            left:20%;
+        }
+        th,td{
+            padding:1%;
+            border-radius: 2px;
+            left:0%;
+            font-size: 20px;
+        }
+        .result-table{
+            background-color: #150050;
+            height: 70%;
+            width:80%;
+            position: relative;
+            margin:0 auto 0 auto;
+            border: white 2px solid;
+            border-radius: 30px;
+        }
+        .heading{
+            top:10%;
+            position: relative;
+            color: white;
+            font-size: 30px;
+        }
+        .back-div{
+            bottom: 25%;
+            position:relative;
+        }
+        .back-button{
+            background-image: linear-gradient(to bottom left,#959292, rgb(252, 252, 252)), radial-gradient(circle at top left, rgb(176, 172, 172),#000000);
+            background-clip: padding-box, border-box;
+            background-origin: border-box;
+            border: double 3px transparent;
+            border-radius: 80px;
+            padding: 1%;
+            width: 15%;
+            font-size: 90%;
+            cursor: pointer;
+        }
+        .back-button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        .back-button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        .back-button:hover span {
+            padding-right: 25px;
+        }
+
+        .back-button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        .s1,.s2,.heading{
+            color: #bd4a4a;
+        }
+    </style>
+    
+</html>

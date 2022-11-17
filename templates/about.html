@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>About our project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="..\static\favicon.ico">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="About_title">
+            <h1>MODELS USED</h1>
+        </div>
+        <div class="About_desc">
+            <p>We've used a lot of models of model to achieve the best efficiency for our problem.<br>
+               So we've decided to show you every particular model and it's efficieny, <br>
+               Therewidth you know that you know you get the best possible output :)
+            </p>
+        </div>
+        <div class = "About_m1">
+            <h1>LinearSVC</h1>
+        </div>
+        <div class = "About_m11">
+            <p> Support vector machines (SVMs) are powerful yet flexible supervised machine learning methods<br>
+                used for classification, regression, and, outliers’ detection. SVMs are very efficient in high <br>
+                dimensional spaces and generally are used in classification problems. SVMs are popular and <br>
+                memory efficient because they use a subset of training points in the decision function. <br>
+            </p>
+        </div>
+
+        <div id="piechart"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['predition', 'score'],
+        ['Correct prediction', 0.8272980501392758],
+        ['Wrong prediction', 1-0.8272980501392758],
+        ]);
+
+        var options = {'title':'Linear SVC', 'width':550, 'height':400};
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+        }
+        </script>
+
+
+
+
+
+
+        <div class = "About_m2">
+            <h1>LogisticRegressor</h1>
+        </div>
+        <div class = "About_m22">
+            <p> Logistic regression is a statistical analysis method to predict a binary outcome, such as yes or no,<br>
+            based on prior observations of a data set. A logistic regression model predicts a dependent data variable <br>
+            by analyzing the relationship between one or more existing independent variables. <br>
+            </p>
+        </div>
+
+        <div id="piechart1"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['predition', 'score'],
+        ['Correct prediction', 0.8566475],
+        ['Wrong prediction', 1- 0.8566475],
+        ]);
+
+        var options = {'title':'LogisticRegressor', 'width':550, 'height':400};
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+        chart.draw(data, options);
+        }
+        </script>
+
+
+
+
+        <div class="box">
+            <a href="index.html">
+                <div class="btn btn-goback">
+                <span>HOME</span>
+                </div>
+            </a>
+        </div>
+
+
+        
+
+
+
+        
+        <script src="" async defer></script>
+    </body>
+    <style>
+        body{
+            background: linear-gradient(315deg, rgba(0,0,0,1) 51%, rgba(48,26,170,1) 100%);
+            background-blend-mode: darken;
+            font-family:arial, sans-serif;
+        }
+
+        .About_title{
+            top:25%;
+            left: 40%;
+            position:static;
+            font-size: 20px;
+            color: crimson;
+            display: flex;
+            justify-content: center;
+            font-family:Times New Roman;
+        }
+
+        .About_desc{
+            font-size: 25px;
+            top: 45%;
+            left: 10%;
+            display: flex;
+            justify-content: center;
+            font-family:Papyrus;
+            color: rgb(179, 179, 179); 
+        }
+
+        .About_m1{
+            color: crimson;
+            font-family:Times New Roman;
+        }
+
+        .About_m11{
+            color: rgb(179, 179, 179);
+            font-family:Papyrus;
+        }
+
+        .About_m2{
+            color: crimson;
+            font-family:Times New Roman;
+        }
+
+        .About_m22{
+            color: rgb(179, 179, 179);
+            font-family:Papyrus;
+        }
+
+
+        div[class*=box] {
+            height: 33.33%;
+            width: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .btn {
+            line-height: 50px;
+            height: 50px;
+           text-align: center;
+            width: 250px;
+            cursor: pointer;
+            }
+
+
+
+
+            .btn-goback {
+            color: #FFF;
+            transition: all 0.5s;
+            position: relative; 
+            }
+            .btn-goback span {
+            z-index: 2; 
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%; 
+            }
+            .btn-goback::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.1);
+            }
+            .btn-goback::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.1);
+            }
+            .btn-goback:hover::before {
+            transform: rotate(-45deg);
+            background-color: rgba(255,255,255,0);
+            }
+            .btn-goback:hover::after {
+            transform: rotate(45deg);
+            background-color: rgba(255,255,255,0);
+            }
+
+
+
+    </style>
+</html>

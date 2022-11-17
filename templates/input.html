@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sentiment Analysis</title>
+        <link rel="icon" type="image/x-icon" href="..\static\favicon.ico">
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title-div">
+                <h1 class="main-title"><span class="s1">S</span>enti<span class="s2">G</span>rader : Sentiment Analysis Tool</h1>
+            </div>
+            <div class="d2">
+                <h2 class="heading">Provide Input Statement or Upload file</h2>
+                <form class="data-form" action="/input" method="POST" enctype="multipart/form-data">
+                    <div class="d3">
+                        <div class="stmt-box-div">
+                            <input class="stmt-box" id="statement" type="text" name="statement" placeholder="Text to be Analyzed">
+                        </div>
+                        <div class="file-upload-div">
+                            <span>
+                                <label class="upload-label">Upload File</label>
+                                <input class="file-upload" id="filebutton" type="file" name="fileButton">
+                            </span>
+                        </div>
+                        <div class="button-div">
+                            <button class="submit-button" formmethod="post" id="button-id" value="predict-polarity"><strong>Predict Polarity</strong></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>   
+    </body>
+
+    <style>
+        body{
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(49, 49, 49, 0.903) 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+        html,body{
+            height: 100%;
+        }
+        .main-title{
+            height: 20%;
+            text-align: center;
+            color: azure;
+            font-size: 50px;
+            font-family: arial;
+        }
+        .stmt-box{
+            width: 60%;
+            font-size: 20px;
+            height: 1%;
+            padding: 2%;
+            background-color: #cecccc;
+            border: 3px white solid;
+            border-radius: 10px;
+            margin: 1%;
+        }
+        .submit-button{ 
+            /* background-image: linear-gradient(to bottom left,#959292, rgb(252, 252, 252)), radial-gradient(circle at top left, rgb(176, 172, 172),#000000); */
+            background-clip: padding-box, border-box;
+            background-origin: border-box;
+            border: none;
+            border-radius: 10px;
+
+            width: 20%;
+            color:rgb(56, 56, 56);
+            font-size: 20px;
+            margin: 1%;
+            padding: 1%;  
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 10px rgb(99, 99, 99);
+        }
+        .submit-button:hover {
+             background-color: #c2c5c2 
+        }
+        .submit-button:active {
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        .stmt-box-div{
+            height: 1%;
+            width: 100%;
+            top: 32%;
+            position: absolute;
+        }
+        .button-div{
+            height: 5%;
+            width: 100%;
+            top:65%;
+            position: absolute;
+        }
+        .upload-label{
+            color: rgb(246, 244, 244);
+            font-size: 150%;
+            font: bold;
+            font-family: sans-serif;
+        }
+        .file-upload{ 
+            width: 20%;
+            color:rgb(130, 130, 130);
+            font-size: 20px;
+            margin: 1%;
+            padding: 1%;
+            
+            border-radius: 10px;
+        }
+        .file-upload-div{
+            height: 5%;
+            width: 100%;
+            top:50%;
+            position: absolute;
+        }
+        .container{
+            height: 100%;
+        }
+        .d2{
+            height: 80%;
+            width: 90%;
+            background: #150050;
+            border: white 2px solid;
+            border-radius: 30px;
+            position:relative;
+            left:5%;
+        }   
+        .stmt-box::placeholder{
+            text-align: center;
+        }
+        .heading{
+            top:10%;
+            position: relative;
+            color: white;
+            font-size: 30px;
+        }
+        .s1,.s2,.heading{
+            color: #bd4a4a;
+        }
+    </style>
+
+        <script>
+            function emptyFieldChecker(){
+                if((document.getElementById("statement").value=="")&&(document.getElementById("filebutton").files.length==0)){
+                    alert("Please Provide ANY one type of input for prediction");
+                    event.preventDefault();
+                }
+
+                if((document.getElementById("statement").value!="")&&(document.getElementById("filebutton").files.length!=0)){
+                    alert("Please Provide ONLY one type of input for prediction");
+                    event.preventDefault();
+                }
+            }
+            document.getElementsByClassName("submit-button")[0].addEventListener("click",emptyFieldChecker);
+            
+        </script>
+</html>
